@@ -5,3 +5,5 @@ langchain_pinecone
 pinecone-client
 python-dotenv
 GitPython
+fastapi
+uvicorn

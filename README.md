@@ -25,6 +25,7 @@ This project uses RAG (Retrieval-Augmented Generation) with LangChain, OpenAI, a
 3. Install the dependencies:
    ```bash
    pip install -r requirements.txt
+   pip install fastapi uvicorn
    ```
 
 ## Configuration
@@ -46,7 +47,7 @@ Run the ingestion script to clone the repository and index the `.md` files:
 python ingest.py
 ```
 
-## How to ask questions
+## How to ask questions (CLI)
 
 After indexing, run the query script:
 
@@ -55,6 +56,31 @@ python query.py
 ```
 
 Type your question in the prompt. To exit, type `sair` (or `exit`).
+
+## How to use the REST API
+
+You can also interact with the project via a REST API using FastAPI.
+
+1. Start the API server:
+   ```bash
+   uvicorn api:app --reload
+   ```
+
+2. Access the automatic documentation at:
+   http://127.0.0.1:8000/docs
+
+3. Make a POST request to `/ask` with a JSON body:
+   ```json
+   {
+     "question": "What is the purpose of this project?"
+   }
+   ```
+   The response will be:
+   ```json
+   {
+     "answer": "..."
+   }
+   ```
 
 ## Notes
 

@@ -1,0 +1,48 @@
+# Byte-compiled / cache / virtual envs
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Environment variables
+.env
+.env.*
+
+# IDEs e editores
+.vscode/
+.idea/
+*.swp
+*~
+
+# Arquivos de log
+test.log
+*.log
+
+# Arquivos de dados temporários
+*.csv
+*.sqlite3
+*.db
+
+# Arquivos compactados
+*.zip
+*.tar.gz
+*.tar
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Outros
+repo/repo*
+repo/.git/
+repo-isb/.git/ 

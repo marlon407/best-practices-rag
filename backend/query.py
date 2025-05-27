@@ -44,3 +44,4 @@ if __name__ == "__main__":
         resposta = ask_question(q, history)
         print(resposta)
         history.append((q, resposta))
+ 

@@ -114,6 +114,14 @@ No modo local, as variáveis `AWS_ACCESS_KEY_ID` e `AWS_SECRET_ACCESS_KEY` do se
   ```
 - Quando for usar em produção (AWS), remova a variável `DYNAMO_LOCAL` e use suas credenciais reais no `.env`.
 
+## Como rodar o backend
+
+Entre na pasta backend:
+```bash
+cd backend
+```
+E siga as instruções normalmente para rodar scripts, instalar dependências, etc.
+
 ## Notes
 
 - The `ingest.py` script only clones the repository if it does not already exist in the `repo-isb` folder.

@@ -1,22 +1,26 @@
-# Byte-compiled / cache / virtual envs
-__pycache__/
-*.py[cod]
-*.so
-*.egg
-*.egg-info/
-dist/
-build/
-.eggs/
+# Ignorar arquivos .env em qualquer pasta
+**/.env
+**/.env.*
 
-# Virtual environments
-venv/
-env/
-ENV/
-.venv/
+# Ignorar arquivos e pastas do frontend
+/frontend/node_modules/
+/frontend/build/
 
-# Environment variables
-.env
-.env.*
+# Ignorar arquivos e pastas do backend
+/backend/__pycache__/
+/backend/*.py[cod]
+/backend/venv/
+/backend/env/
+/backend/*.egg-info/
+/backend/dist/
+/backend/build/
+
+# Ignorar arquivos comuns
+*.log
+*.sqlite3
+*.db
+.DS_Store
+Thumbs.db
 
 # IDEs e editores
 .vscode/
@@ -24,14 +28,17 @@ ENV/
 *.swp
 *~
 
+# Outros
+repo-isb/.git/
+
 # Arquivos de log
 test.log
-*.log
 
 # Arquivos de dados temporários
 *.csv
-*.sqlite3
-*.db
+*.zip
+*.tar.gz
+*.tar
 
 # Arquivos compactados
 *.zip
@@ -43,6 +50,4 @@ test.log
 Thumbs.db
 
 # Outros
-repo/repo*
-repo/.git/
-repo-isb/.git/ 
+repo/repo* 

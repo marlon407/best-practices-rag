@@ -36,4 +36,4 @@ def get_thread_history(thread_id: str) -> List[Tuple[str, str]]:
         KeyConditionExpression=Key('thread_id').eq(thread_id),
         ScanIndexForward=True  # ordem crescente
     )
-    return [(item['question'], item['answer']) for item in response.get('Items', [])] 
+    return [(item['question'], item['answer']) for item in response.get('Items', [])]  

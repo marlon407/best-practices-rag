@@ -64,3 +64,4 @@ if __name__ == "__main__":
     docs = load_documents()
     chunks = split_documents(docs)
     criar_e_preencher_indice(chunks)
+ 

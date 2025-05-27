@@ -17,7 +17,7 @@ REPO_URL = os.getenv("REPO_URL")
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
 PINECONE_INDEX_NAME = os.getenv("PINECONE_INDEX_NAME")
 
-CLONE_DIR = "repo-isb"
+CLONE_DIR = "repo"
 
 def clone_repo():
     if os.path.exists(CLONE_DIR):

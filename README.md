@@ -7,6 +7,7 @@ This project uses RAG (Retrieval-Augmented Generation) with LangChain, OpenAI, a
 - Python 3.8+
 - OpenAI account (for embeddings and LLM)
 - Pinecone account (for vector storage)
+- AWS account (for DynamoDB usage)
 
 ## Installation
 
@@ -37,6 +38,13 @@ REPO_URL=<url-of-the-repository-to-be-cloned>
 PINECONE_API_KEY=<your-pinecone-key>
 PINECONE_INDEX_NAME=<your-pinecone-index-name>
 OPENAI_API_KEY=<your-openai-key>
+
+# AWS credentials for DynamoDB
+AWS_ACCESS_KEY_ID=<your-aws-access-key>
+AWS_SECRET_ACCESS_KEY=<your-aws-secret-key>
+AWS_DEFAULT_REGION=us-east-1
+
+DYNAMO_LOCAL=1
 ```
 
 ## How to index documents
@@ -72,6 +80,7 @@ You can also interact with the project via a REST API using FastAPI.
 3. Make a POST request to `/ask` with a JSON body:
    ```json
    {
+     "thread_id": "my-session-id",
      "question": "What is the purpose of this project?"
    }
    ```
@@ -82,11 +91,36 @@ You can also interact with the project via a REST API using FastAPI.
    }
    ```
 
+## Usando o DynamoDB Local (para testes)
+
+Você pode rodar o DynamoDB Local usando Docker:
+
+```bash
+docker run -p 8001:8001 amazon/dynamodb-local
+```
+
+Para que o código utilize o DynamoDB Local, inclua no seu `.env`:
+
+```
+DYNAMO_LOCAL=1
+```
+
+No modo local, as variáveis `AWS_ACCESS_KEY_ID` e `AWS_SECRET_ACCESS_KEY` do seu `.env` podem ser qualquer valor (exemplo: `fakeMyKeyId` e `fakeSecretAccessKey`).
+
+**Importante:**
+- Você precisa criar a tabela localmente antes de usar. Execute:
+  ```bash
+  python create_table_local.py
+  ```
+- Quando for usar em produção (AWS), remova a variável `DYNAMO_LOCAL` e use suas credenciais reais no `.env`.
+
 ## Notes
 
 - The `ingest.py` script only clones the repository if it does not already exist in the `repo-isb` folder.
 - Only `.md` files from the cloned repository are indexed.
 - The `.env` file is in `.gitignore` and will not be versioned.
+- If you get a 404 error from Pinecone, make sure you have run `python ingest.py` and that your Pinecone index exists and is correctly named in your `.env` file.
+- For DynamoDB usage, you must provide valid AWS credentials in your `.env` file as shown above.
 
 ## License
 

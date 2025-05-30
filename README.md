@@ -96,7 +96,7 @@ You can also interact with the project via a REST API using FastAPI.
 Você pode rodar o DynamoDB Local usando Docker:
 
 ```bash
-docker run -p 8001:8001 amazon/dynamodb-local
+docker run -p 8001:8000 amazon/dynamodb-local
 ```
 
 Para que o código utilize o DynamoDB Local, inclua no seu `.env`:

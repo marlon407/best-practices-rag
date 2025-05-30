@@ -6,6 +6,7 @@ from typing import Dict, List
 from dynamo_utils import save_message, get_thread_history
 import uuid
 
+
 app = FastAPI()
 
 app.add_middleware(

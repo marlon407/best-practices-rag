@@ -114,6 +114,34 @@ No modo local, as variáveis `AWS_ACCESS_KEY_ID` e `AWS_SECRET_ACCESS_KEY` do se
   ```
 - Quando for usar em produção (AWS), remova a variável `DYNAMO_LOCAL` e use suas credenciais reais no `.env`.
 
+## Como rodar o frontend
+
+Entre na pasta frontend:
+```bash
+cd frontend
+```
+
+Instale as dependências:
+```bash
+npm install
+# ou
+yarn install
+```
+
+Inicie o servidor de desenvolvimento:
+```bash
+npm start
+# ou
+yarn start
+```
+
+O frontend estará disponível em `http://localhost:3000`
+
+### Funcionalidades do Frontend
+- Interface de chat com timeline de perguntas e respostas
+- Indicador de carregamento durante o processamento das respostas
+- Persistência do thread ID para manter o contexto da conversa
+
 ## Como rodar o backend
 
 Entre na pasta backend:

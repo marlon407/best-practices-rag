@@ -159,6 +159,20 @@ And follow the normal instructions for running scripts, installing dependencies,
 - If you get a 404 error from Pinecone, make sure you have run `python ingest.py` and that your Pinecone index exists and is correctly named in your `.env` file.
 - For DynamoDB usage, you must provide valid AWS credentials in your `.env` file as shown above.
 
+## ⚠️ Important Notice
+
+**This project is intended for educational and experimental purposes only. It should not be used in production environments.**
+
+Key limitations and considerations:
+- This is a playground project to explore RAG concepts and implementations
+- Security measures are minimal and not production-ready
+- Error handling is basic and not comprehensive
+- Performance optimizations are not implemented
+- No SLA or support guarantees
+- Not suitable for handling sensitive or production data
+
+If you're looking to implement RAG in a production environment, please ensure proper security measures, error handling, and performance optimizations are in place.
+
 ## License
 
 MIT License

@@ -37,6 +37,7 @@ Create a `.env` file in the project root with the following variables:
 REPO_URL=<url-of-the-repository-to-be-cloned>
 PINECONE_API_KEY=<your-pinecone-key>
 PINECONE_INDEX_NAME=<your-pinecone-index-name>
+PINECONE_OPENAPI_INDEX_NAME=<your-pinecone-openApi-index-name>
 OPENAI_API_KEY=<your-openai-key>
 
 # AWS credentials for DynamoDB
@@ -63,11 +64,11 @@ After indexing, run the query script:
 python query.py
 ```
 
-Type your question in the prompt. To exit, type `sair` (or `exit`).
+Type your question in the prompt. To exit, type `exit`.
 
 ## How to use the REST API
 
-You can also interact with the project via a REST API using FastAPI.
+You can also interact with the project via a REST API using FastAPI. Go to the backend folder:
 
 1. Start the API server:
    ```bash
@@ -91,64 +92,64 @@ You can also interact with the project via a REST API using FastAPI.
    }
    ```
 
-## Usando o DynamoDB Local (para testes)
+## Using Local DynamoDB (for testing)
 
-Você pode rodar o DynamoDB Local usando Docker:
+You can run DynamoDB Local using Docker:
 
 ```bash
 docker run -p 8001:8000 amazon/dynamodb-local
 ```
 
-Para que o código utilize o DynamoDB Local, inclua no seu `.env`:
+To make the code use Local DynamoDB, include in your `.env`:
 
 ```
 DYNAMO_LOCAL=1
 ```
 
-No modo local, as variáveis `AWS_ACCESS_KEY_ID` e `AWS_SECRET_ACCESS_KEY` do seu `.env` podem ser qualquer valor (exemplo: `fakeMyKeyId` e `fakeSecretAccessKey`).
+In local mode, the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` variables in your `.env` can be any value (example: `fakeMyKeyId` and `fakeSecretAccessKey`).
 
-**Importante:**
-- Você precisa criar a tabela localmente antes de usar. Execute:
+**Important:**
+- You need to create the table locally before using it. Run:
   ```bash
   python create_table_local.py
   ```
-- Quando for usar em produção (AWS), remova a variável `DYNAMO_LOCAL` e use suas credenciais reais no `.env`.
+- When using in production (AWS), remove the `DYNAMO_LOCAL` variable and use your real credentials in `.env`.
 
-## Como rodar o frontend
+## How to run the frontend
 
-Entre na pasta frontend:
+Enter the frontend folder:
 ```bash
 cd frontend
 ```
 
-Instale as dependências:
+Install dependencies:
 ```bash
 npm install
-# ou
+# or
 yarn install
 ```
 
-Inicie o servidor de desenvolvimento:
+Start the development server:
 ```bash
 npm start
-# ou
+# or
 yarn start
 ```
 
-O frontend estará disponível em `http://localhost:3000`
+The frontend will be available at `http://localhost:3000`
 
-### Funcionalidades do Frontend
-- Interface de chat com timeline de perguntas e respostas
-- Indicador de carregamento durante o processamento das respostas
-- Persistência do thread ID para manter o contexto da conversa
+### Frontend Features
+- Chat interface with question and answer timeline
+- Loading indicator during response processing
+- Thread ID persistence to maintain conversation context
 
-## Como rodar o backend
+## How to run the backend
 
-Entre na pasta backend:
+Enter the backend folder:
 ```bash
 cd backend
 ```
-E siga as instruções normalmente para rodar scripts, instalar dependências, etc.
+And follow the normal instructions for running scripts, installing dependencies, etc, as described at the begining
 
 ## Notes
 
